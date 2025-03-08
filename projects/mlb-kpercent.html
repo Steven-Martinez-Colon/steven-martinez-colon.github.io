@@ -16,23 +16,115 @@
                 <li><a href="../projects.html">Projects</a></li>
             </ul>
         </nav>
+        <a href="https://github.com/Steven-Martinez-Colon/mlb-strikeout-predictor" class="btn">View Code on GitHub</a>
     </header>
 
-    <section id="project-content">
-        <h2>About the Project</h2>
-        <p>This project develops a Ridge Regression model to predict a pitcher's strikeout percentage (K%) using historical MLB data...</p>
+    <section id="project-content">        
+        <h2>Introduction</h2>
+        <p>Strikeouts are one of the most defining statistics in modern baseball. They showcase a pitcher’s dominance, ability to miss bats, and overall effectiveness on the mound. But what if we could predict a pitcher’s strikeout percentage (K%) before the season even begins?</p>
+        
+        <p>Using <strong>historical MLB data from FanGraphs</strong>, I developed a <strong>machine learning model</strong> to estimate each pitcher’s <strong>K% for the 2024 season</strong>. The model analyzes past performance metrics, plate discipline data, and advanced pitching statistics to generate predictions.</p>
 
-        <h2>Results & Analysis</h2>
-        <p>Here you can showcase your model's performance, insights, and any visualizations.</p>
+        <p>After testing multiple approaches, <strong>Ridge Regression</strong> proved to be the most accurate model for this task, outperforming other techniques such as <strong>Random Forest and XGBoost</strong>. Below, I’ll walk through my methodology, the key features that influence strikeout rates, and my final predictions for the <strong>2024 MLB season</strong>.</p>
 
-        <h2>Technologies Used</h2>
+        <h2>How Strikeouts Are Influenced by Pitching Metrics</h2>
+        <p>Several factors contribute to a pitcher’s ability to generate swings and misses. Based on historical data and advanced sabermetrics, I identified the following key features as the best predictors of K%:</p>
+        
         <ul>
-            <li>R (tidyverse, glmnet for Ridge Regression)</li>
-            <li>FanGraphs & Baseball Savant Data</li>
-            <li>Data Visualization (ggplot2, Shiny for interactivity)</li>
+            <li><strong>Fastball Velocity (vFA)</strong> – Pitchers who throw harder generally generate more strikeouts.</li>
+            <li><strong>Contact%</strong> – The percentage of times a batter makes contact when swinging; lower contact rates correlate with higher K%.</li>
+            <li><strong>Zone Contact% (Z-Contact%)</strong> – The percentage of contact on pitches inside the strike zone.</li>
+            <li><strong>Outside Contact% (O-Contact%)</strong> – The percentage of contact on pitches outside the strike zone.</li>
+            <li><strong>Outside Swing% (O-Swing%)</strong> – How often batters swing at pitches outside the strike zone.</li>
+            <li><strong>Earned Run Average (ERA)</strong> – While not directly related to strikeouts, a lower ERA often indicates better overall pitching quality.</li>
+            <li><strong>Games Played (G)</strong> – Pitchers who appear in more games generally have more opportunities to record strikeouts.</li>
         </ul>
 
-        <a href="https://github.com/Steven-Martinez-Colon/mlb-strikeout-predictor" class="btn">View Code on GitHub</a>
+        <h2>Building the Strikeout Prediction Model</h2>
+        <p>After compiling the dataset, I tested four different machine learning models to determine which provided the most accurate predictions:</p>
+
+        <h3>1. Linear Regression (Baseline Model)</h3>
+        <ul>
+            <li><strong>R²:</strong> 69.8%</li>
+            <li><strong>RMSE:</strong> 0.02876</li>
+            <li><strong>MAE:</strong> 0.02292</li>
+            <li><strong>Key Takeaways:</strong> Provided a solid baseline but struggled with nonlinear relationships.</li>
+        </ul>
+
+        <h3>2. Random Forest (Nonlinear Approach)</h3>
+        <ul>
+            <li><strong>R²:</strong> 65.6%</li>
+            <li><strong>RMSE:</strong> 0.03071</li>
+            <li><strong>MAE:</strong> 0.02416</li>
+            <li><strong>Key Takeaways:</strong> Captured nonlinear trends but had higher error rates than linear models.</li>
+        </ul>
+
+        <h3>3. XGBoost (Gradient Boosting)</h3>
+        <ul>
+            <li><strong>R²:</strong> 67.3%</li>
+            <li><strong>RMSE:</strong> 0.02989</li>
+            <li><strong>MAE:</strong> 0.02366</li>
+            <li><strong>Key Takeaways:</strong> Performed better than Random Forest but still fell short of the best model.</li>
+        </ul>
+
+        <h3>4. Ridge Regression (Best Model)</h3>
+        <ul>
+            <li><strong>R²:</strong> <strong>69.9%</strong></li>
+            <li><strong>RMSE:</strong> <strong>0.02867</strong></li>
+            <li><strong>MAE:</strong> <strong>0.02284</strong></li>
+            <li><strong>Key Takeaways:</strong> Most accurate model for predicting K%. Effectively handled multicollinearity without overfitting.</li>
+        </ul>
+
+        <h2>Final Predictions for the 2024 MLB Season</h2>
+        <p>Using the final Ridge Regression model, I generated predictions for the 2024 season. The table below highlights five pitchers projected to have the highest K% in 2024:</p>
+
+        <table>
+            <tr>
+                <th>Rank</th>
+                <th>Pitcher</th>
+                <th>Predicted K%</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td><strong>Spencer Strider</strong></td>
+                <td><strong>34.5%</strong></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Jacob deGrom</td>
+                <td>32.8%</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Shohei Ohtani</td>
+                <td>30.7%</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Corbin Burnes</td>
+                <td>30.2%</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Dylan Cease</td>
+                <td>29.9%</td>
+            </tr>
+        </table>
+
+        <h2>Conclusion & Future Improvements</h2>
+        <p>This project successfully developed a highly accurate model for predicting MLB pitcher strikeout rates using key performance indicators such as fastball velocity, plate discipline metrics, and earned run average.</p>
+
+        <p>With a <strong>69.9% R²</strong> and a <strong>low MAE of 2.28 percentage points</strong>, the <strong>Ridge Regression model</strong> emerged as the best predictive tool, outperforming nonlinear methods like Random Forest and XGBoost.</p>
+
+        <h3>Potential Future Enhancements:</h3>
+        <ul>
+            <li>Incorporating new features like <strong>pitch spin rate, release point, and pitch usage trends</strong>.</li>
+            <li>Exploring <strong>deep learning models</strong> for even better predictions.</li>
+            <li>Advanced feature engineering to better capture <strong>complex relationships</strong>.</li>
+        </ul>
+
+        <p>Overall, this study provides a data-driven approach to evaluating MLB pitcher strikeout potential, helping analysts, scouts, and fantasy baseball players make better-informed decisions.</p>
+
     </section>
 
     <footer>
