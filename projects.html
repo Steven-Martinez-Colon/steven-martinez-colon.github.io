@@ -6,32 +6,123 @@
     <title>Projects | Steven Martinez</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #1e1e1e;
+            color: #fff;
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #bbb;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: #0073e6;
+        }
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .project-card {
+            background: #1e1e1e;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s;
+        }
+        .project-card:hover {
+            transform: scale(1.05);
+        }
+        .project-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .project-card h3 {
+            margin-top: 10px;
+            color: #0073e6;
+        }
+        .project-card p {
+            font-size: 0.9rem;
+            color: #bbb;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 16px;
+            background: #0073e6;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background: #005bb5;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: #1e1e1e;
+            margin-top: 30px;
+        }
+    </style>
 </head>
 <body>
+
     <header>
-        <h1>Projects</h1>
+        <h1>My Projects</h1>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-
             </ul>
         </nav>
     </header>
 
-    <section id="projects">
-        <h2>My Projects</h2>
-        
-        <div class="project">
+    <section class="projects-container">
+
+        <!-- NBA MVP Predictor -->
+        <div class="project-card">
+            <img src="assets/images/nba-mvp.jpg" alt="NBA MVP Predictor">
             <h3>NBA MVP Predictor</h3>
-            <p>Machine learning model using XGBoost to predict NBA MVP winners.</p>
+            <p>Using machine learning (XGBoost) to predict the NBA MVP based on advanced player stats and team performance.</p>
             <a href="projects/nba-mvp.html" class="btn">View Project</a>
         </div>
 
-        <div class="project">
+        <!-- MLB Pitcher Strikeout Prediction -->
+        <div class="project-card">
+            <img src="assets/images/mlb-kpercent.jpg" alt="MLB Pitcher K% Predictor">
             <h3>MLB Pitcher Strikeout Predictor</h3>
-            <p>Ridge Regression model predicting strikeout percentage using FanGraphs data.</p>
+            <p>Built a Ridge Regression model to predict a pitcher's strikeout percentage (K%) using FanGraphs and Statcast data.</p>
             <a href="projects/mlb-kpercent.html" class="btn">View Project</a>
         </div>
+
+        <!-- More projects can be added similarly -->
 
     </section>
 
@@ -46,5 +137,6 @@
             </a>
         </div>
     </footer>
+
 </body>
 </html>
