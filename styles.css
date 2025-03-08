@@ -67,3 +67,20 @@ footer {
 .btn:hover {
     background: #005bb5;
 }
+
+.social-icons {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 30px;
+    margin: 0 15px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #0073e6;
+}
