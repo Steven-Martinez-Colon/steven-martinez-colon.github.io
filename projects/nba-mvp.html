@@ -9,31 +9,144 @@
 </head>
 <body>
     <header>
-        <h1>NBA MVP Predictor</h1>
+        <h1>Predicting the NBA MVP Using Machine Learning</h1>
         <nav>
             <ul>
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="../projects.html">Projects</a></li>
             </ul>
         </nav>
+        <a href="https://github.com/Steven-Martinez-Colon/nba-mvp-prediction" class="btn">View Code on GitHub</a>
     </header>
 
-    <section id="project-content">
-        <h2>About the Project</h2>
-        <p>This project uses historical NBA data and machine learning (XGBoost) to predict MVP winners...</p>
+    <main>
+        <section id="project-content">
+            <h2>🏀 Predicting the NBA MVP with Machine Learning</h2>
 
-        <h2>Results & Analysis</h2>
-        <p>Here you can showcase your findings, charts, and key insights.</p>
+            <h3>Introduction</h3>
+            <p>
+                Every NBA season, the Most Valuable Player (MVP) award sparks intense debates among fans, analysts, and players. 
+                What truly defines an MVP? Is it raw individual talent, team success, or a combination of various statistical measures? 
+                The criteria are often subjective, but <strong>can we use data and machine learning to predict the next MVP?</strong>
+            </p>
+            <p>
+                In this project, I set out to answer that question by leveraging <strong>historical NBA data</strong> and 
+                <strong>machine learning models</strong> to predict the <strong>2025 NBA MVP</strong>. Using a blend of 
+                traditional statistics and advanced analytics, my goal was to identify patterns in previous MVP selections and apply 
+                those insights to forecast the future winner.
+            </p>
 
-        <h2>Technologies Used</h2>
-        <ul>
-            <li>Python (Pandas, Scikit-Learn, XGBoost)</li>
-            <li>Data Visualization (Matplotlib, Seaborn)</li>
-            <li>NBA Statistics Dataset</li>
-        </ul>
+            <h3>Understanding the MVP Criteria</h3>
+            <p>
+                The MVP race is influenced by multiple factors beyond just scoring. <strong>Historical trends</strong> suggest that 
+                MVP winners usually exhibit the following characteristics:
+            </p>
+            <ul>
+                <li><strong>Elite Performance</strong> – High individual stats in scoring, efficiency, and advanced metrics.</li>
+                <li><strong>Team Success</strong> – MVPs are rarely from losing teams; top seeds dominate the award.</li>
+                <li><strong>Narrative & Media Influence</strong> – Voter perception matters, but it's difficult to quantify.</li>
+                <li><strong>Consistency</strong> – The ability to perform at a high level throughout the season.</li>
+            </ul>
+            <p>
+                Using these principles, I gathered a comprehensive dataset of past MVP winners and key performance metrics to develop 
+                a machine learning model that predicts the 2025 MVP race.
+            </p>
 
-        <a href="https://github.com/Steven-Martinez-Colon/nba-mvp-predictor" class="btn">View Code on GitHub</a>
-    </section>
+            <h3>Data Collection & Feature Selection</h3>
+            <p>
+                To ensure an accurate model, I collected data from various sources, including:
+            </p>
+            <ul>
+                <li><strong>Historical NBA MVP Data</strong> – A dataset from Kaggle with past MVP winners and player performance stats.</li>
+                <li><strong>Advanced NBA Statistics</strong> – Key efficiency metrics such as <strong>Win Shares per 48 minutes (WS/48)</strong> and <strong>Player Efficiency Rating (PER)</strong>.</li>
+                <li><strong>Team Success Metrics</strong> – Win-loss records and team seeding, as MVPs often come from the top-performing teams.</li>
+            </ul>
+            <p>
+                Through exploratory data analysis, I identified the most <strong>important features</strong> that influence MVP selection:
+            </p>
+            <ul>
+                <li><strong>Value Over Replacement Player (VORP)</strong> – A measure of a player's total contribution.</li>
+                <li><strong>Win Shares per 48 Minutes (WS/48)</strong> – Player impact on team wins per minute played.</li>
+                <li><strong>Player Efficiency Rating (PER)</strong> – A single number summarizing overall efficiency.</li>
+                <li><strong>Points Per Game (PTS)</strong> – A major factor in MVP candidacy.</li>
+                <li><strong>Team Seeding (Seed)</strong> – Higher-seeded teams have a stronger chance of producing an MVP.</li>
+                <li><strong>Usage Percentage (USG%)</strong> – Indicates how much of a team's offense runs through the player.</li>
+                <li><strong>Win-Loss Ratio</strong> – Team success plays a significant role in voting.</li>
+            </ul>
+
+            <h3>Model Development & Performance</h3>
+            <p>
+                To maximize prediction accuracy, I tested <strong>three different models</strong>:
+            </p>
+
+            <h4>📊 Linear Regression (Baseline Model)</h4>
+            <ul>
+                <li><strong>R²:</strong> 51.2%</li>
+                <li><strong>LOYOCV Accuracy:</strong> 61.9%</li>
+                <li><strong>Key Findings:</strong> While effective at identifying general trends, it struggled with complex interactions between variables.</li>
+            </ul>
+
+            <h4>🌲 Random Forest (Improved Model)</h4>
+            <ul>
+                <li><strong>R²:</strong> 66.8%</li>
+                <li><strong>LOYOCV Accuracy:</strong> 71.4%</li>
+                <li><strong>Key Findings:</strong> Performed significantly better, capturing nonlinear relationships and ranking feature importance effectively.</li>
+            </ul>
+
+            <h4>🚀 XGBoost (Best Model)</h4>
+            <ul>
+                <li><strong>R²:</strong> 67.3%</li>
+                <li><strong>LOYOCV Accuracy:</strong> <strong>83.3%</strong></li>
+                <li><strong>Key Findings:</strong> The most accurate model, outperforming both Linear Regression and Random Forest.</li>
+            </ul>
+
+            <h3>Predicting the 2025 NBA MVP</h3>
+            <p>
+                After training the final <strong>XGBoost model</strong>, I applied it to the 2025 season data to generate predicted MVP vote shares for the top contenders. The model’s prediction for the <strong>2025 NBA MVP</strong> is:
+            </p>
+
+            <h2>🏆 Shai Gilgeous-Alexander</h2>
+
+            <table>
+                <tr>
+                    <th>Rank</th>
+                    <th>Player</th>
+                    <th>Predicted MVP Share</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td><strong>Shai Gilgeous-Alexander</strong></td>
+                    <td><strong>0.8774</strong></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Nikola Jokić</td>
+                    <td>0.6805</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Karl-Anthony Towns</td>
+                    <td>0.2352</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Evan Mobley</td>
+                    <td>0.2315</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Giannis Antetokounmpo</td>
+                    <td>0.2182</td>
+                </tr>
+            </table>
+
+            <h3>Conclusion</h3>
+            <p>
+                With an <strong>83.3% accuracy rate</strong>, this model successfully identified past MVPs and projects 
+                <strong>Shai Gilgeous-Alexander</strong> as the 2025 winner. As the season unfolds, it will be exciting to see how well the predictions hold up.
+            </p>
+        </section>
+    </main>
 
     <footer>
         <p>&copy; 2025 Steven Martinez</p>
