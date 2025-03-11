@@ -84,3 +84,45 @@ footer {
 .social-icons a:hover {
     color: #0073e6;
 }
+
+#experience {
+    padding: 3rem;
+    margin: 2rem auto;
+    max-width: 900px;
+    background: #1e1e1e;
+    border-radius: 10px;
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+#experience h2 {
+    border-bottom: 2px solid #0073e6;
+    padding-bottom: 0.5rem;
+    text-align: center;
+}
+
+.experience-entry {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: #242424;
+    border-radius: 8px;
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3);
+}
+
+.experience-entry h3 {
+    color: #0073e6;
+    margin-bottom: 0.5rem;
+}
+
+.experience-entry p {
+    font-weight: bold;
+    color: #bbb;
+}
+
+.experience-entry ul {
+    padding-left: 20px;
+    list-style-type: disc;
+}
+
+.experience-entry ul li {
+    margin-bottom: 0.5rem;
+}
