@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NBA Rookie of the Year Predictor | Steven Martinez</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <h1>NBA Rookie of the Year Predictor</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../projects.html">Projects</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="project-content">
+        <a href="https://github.com/Steven-Martinez-Colon/nba-roy-prediction" class="btn">View Code on GitHub</a>
+        
+        <h2>Can Machine Learning Predict the Next NBA Rookie of the Year?</h2>
+        <p>Every season, the NBA's best young talent competes for the **Rookie of the Year (ROY)** award. While raw scoring ability often catches the public's eye, the award is about more than just points. Team success, efficiency, and overall impact all play a role. But can **machine learning** help us predict the next winner?</p>
+        
+        <p>In this project, I built a model to forecast the **2025 NBA Rookie of the Year**, using historical ROY data and advanced analytics. By analyzing past winners and their performance metrics, my goal was to develop a **data-driven approach** to predicting the league's top rookie.</p>
+
+        <h2>How the ROY Race is Decided</h2>
+        <p>Traditionally, voters consider factors such as:</p>
+        <ul>
+            <li>**Points Per Game (PTS)** – Scoring is a key factor in the award race.</li>
+            <li>**Minutes Per Game (MPG)** – More playing time often means greater impact.</li>
+            <li>**Usage Percentage (USG%)** – Measures how much of a team’s offense runs through the rookie.</li>
+            <li>**Value Over Replacement Player (VORP)** – A metric that evaluates a player's overall contribution.</li>
+            <li>**Win Shares Per 48 Minutes (WS/48)** – A measure of efficiency and impact on team success.</li>
+        </ul>
+        <p>Using these factors, I gathered **historical rookie performance data** and created a machine learning model to predict future ROY winners.</p>
+        
+        <h2>Data Collection & Feature Selection</h2>
+        <p>To build the model, I compiled data from **past NBA Rookie of the Year winners**, focusing on key statistics that correlated with past selections. After performing exploratory data analysis (EDA), I identified the most important features:</p>
+        <ul>
+            <li>**Points Per Game (PTS)**</li>
+            <li>**Minutes Per Game (MPG)**</li>
+            <li>**Usage Percentage (USG%)**</li>
+            <li>**Value Over Replacement Player (VORP)**</li>
+            <li>**Offensive Box Plus-Minus (OBPM)**</li>
+        </ul>
+        <p>These variables formed the basis for my predictive model.</p>
+        
+        <h2>Model Development & Performance</h2>
+        <p>After testing multiple models, **Random Forest Regression** provided the best performance.</p>
+        <ul>
+            <li><strong>R²:</strong> 74.81%</li>
+            <li><strong>LOYOCV Accuracy:</strong> 81%</li>
+            <li><strong>Mean Absolute Error (MAE):</strong> 0.1537</li>
+        </ul>
+        <p>This model outperformed others in predicting past ROY winners and was ultimately chosen to forecast the 2025 ROY race.</p>
+        
+        <h2>Predicting the 2025 NBA Rookie of the Year</h2>
+        <p>Applying my trained model to the **2025 NBA rookie class**, the projected Rookie of the Year is:</p>
+        <h3>🏆 **Projected 2025 NBA ROY: [Predicted Player Name]**</h3>
+        
+        <h2>Conclusion</h2>
+        <p>This project demonstrates how machine learning can enhance sports analysis and prediction. While no model is perfect, data-driven insights provide a structured way to evaluate the ROY race. The model successfully identified past winners and projects **[Predicted Player Name]** as the 2025 Rookie of the Year.</p>
+        
+        <p>🚀 Interested in the full analysis? <strong><a href="https://github.com/Steven-Martinez-Colon/nba-roy-prediction">View the project on GitHub</a></strong>.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Steven Martinez</p>
+        <div class="social-icons">
+            <a href="https://github.com/Steven-Martinez-Colon" target="_blank">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/steven-martinez-colon/" target="_blank">
+                <i class="fab fa-linkedin"></i>
+            </a>
+        </div>
+    </footer>
+</body>
+</html>
